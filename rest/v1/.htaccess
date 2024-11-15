@@ -1,0 +1,37 @@
+RewriteEngine On
+# use for authentication
+RewriteCond %{HTTP:Authorization} ^(.+)$
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+Header set Access-Control-Allow-Origin *
+
+#################################### ALL FOR DEVELOPER #################################
+
+RewriteRule ^upload-photo$ core/upload-photo.php [L]
+
+
+### Equipments ###
+RewriteRule ^equipments$ controllers/developer/equipments/equipments.php [L]
+RewriteRule ^equipments/([0-9]+)$ controllers/developer/equipments/equipments.php?equipmentsid=$1 [L]
+RewriteRule ^equipments/active/([0-9]+)$ controllers/developer/equipments/active.php?equipmentsid=$1 [L]
+RewriteRule ^equipments/search$ controllers/developer/equipments/search.php [L]
+RewriteRule ^equipments/page/([0-9]+)$ controllers/developer/equipments/page.php?start=$1 [L]
+
+### Accesories ###
+RewriteRule ^accesories$ controllers/developer/accesories/accesories.php [L]
+RewriteRule ^accesories/([0-9]+)$ controllers/developer/accesories/accesories.php?accesoriesid=$1 [L]
+RewriteRule ^accesories/active/([0-9]+)$ controllers/developer/accesories/active.php?accesoriesid=$1 [L]
+RewriteRule ^accesories/search$ controllers/developer/accesories/search.php [L]
+RewriteRule ^accesories/page/([0-9]+)$ controllers/developer/accesories/page.php?start=$1 [L]
+
+
+### Apparels ###
+RewriteRule ^apparels$ controllers/developer/apparels/apparels.php [L]
+RewriteRule ^apparels/([0-9]+)$ controllers/developer/apparels/apparels.php?apparelsid=$1 [L]
+RewriteRule ^apparels/active/([0-9]+)$ controllers/developer/apparels/active.php?apparelsid=$1 [L]
+RewriteRule ^apparels/search$ controllers/developer/apparels/search.php [L]
+RewriteRule ^apparels/page/([0-9]+)$ controllers/developer/apparels/page.php?start=$1 [L]
+
+

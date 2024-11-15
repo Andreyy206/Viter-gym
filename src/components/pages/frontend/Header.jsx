@@ -1,3 +1,4 @@
+// import { imgPath } from "@/components/helpers/functions-general";
 import { ShoppingBag, ShoppingCart } from "lucide-react";
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
@@ -47,7 +48,7 @@ const Header = () => {
         <div className='flex justify-between items-center '>
           <div className=''>
             <Link to='/'>
-              <img src='./public/img/Logo-gym.png' alt='' className=' bg-white  rounded-b-full w-[80px]' />
+              <img src={`http://localhost/viter-gym/public/img/Logo-gym.png`} alt='' className=' bg-white  rounded-b-full w-[80px]' />
             </Link>
           </div>
 
